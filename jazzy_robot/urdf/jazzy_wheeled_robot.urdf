@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<robot name="jazzy robot">
+
+  <!-- Colors -->
+  <material name="purple"><color rgba="0.4470588235294118 0.0 0.34509803921568627 1.0" /></material>
+  <material name="gold"><color rgba="0.9882352941176471 0.9921568627450981 0.0 1.0" /></material>
+  <material name="white"><color rgba="1.0 1.0 1.0 1.0"/></material>
+  <material name="red"><color rgba="0.8 0 0 1.0"/></material>
+  <material name="race_red"><color rgba="0.96 0.26 0.21 1.0"/></material>
+  <material name="trans_red"><color rgba="1.0 0 0 0.2"/></material>
+  <material name="green"><color rgba="0 1.0 0 1.0"/></material>
+  <material name="blue"><color rgba="0 0 0.8 1.0"/></material>
+  <material name="trans_blue"><color rgba="0 0 1.0 0.3"/></material>
+  <material name="periwinkleblue" ><color rgba="0.5607843137254902 0.6 0.984313725490196 1.0" /></material>
+  <material name="ceruleanblue" ><color rgba="0.0196078431372549 0.43137254901960786 0.9333333333333333 1.0" /></material>
+  <material name="black" ><color rgba="0.0 0.0 0.0 1.0" /></material>
+  
+  
+  <!-- Establishing a way for the robot to be above ground -->
+  <link name="base_link"/>
+
+  <joint name="base_link_to_chassis" type="fixed">
+    <parent link="base_link"/>
+    <child link="chassis"/>
+    <origin xyz="0 0 0.04" rpy="0 0 0"/>
+  </joint>
+
+  <!-- 3DOF Rigid Body Chassis Link -->
+  <link name="chassis">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.140 0.120 0.06"/>
+      </geometry>
+      <material name="purple"/>
+    </visual>
+  </link>
+
+
+  <!-- Wheels Links & Joints -->
+  <link name="wheel_front_left">
+    <visual>
+    <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.040" length="0.020"/>
+      </geometry>
+      <material name="gold"/>
+    </visual>
+  </link>
+
+  <joint name="front_left_wheel_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="wheel_front_left"/>
+    <origin xyz="0.0575 0.070 0.04" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.1416" upper="3.1416" effort="1" velocity="10"/>
+  </joint>
+
+  <link name="wheel_front_right">
+    <visual>
+    <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.040" length="0.020"/>
+      </geometry>
+      <material name="gold"/>
+    </visual>
+  </link>
+
+  <joint name="front_right_wheel_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="wheel_front_right"/>
+    <origin xyz="0.0575 -0.070 0.04" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.1416" upper="3.1416" effort="1" velocity="10"/>
+  </joint>
+
+  <link name="wheel_rear_right">
+    <visual>
+    <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.040" length="0.020"/>
+      </geometry>
+        <material name="gold"/>
+    </visual>
+  </link>
+
+  <joint name="rear_right_wheel_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="wheel_rear_right"/>
+    <origin xyz="-0.0575 -0.070 0.04" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.1416" upper="3.1416" effort="1" velocity="10"/>
+  </joint>
+
+  <link name="wheel_rear_left">
+    <visual>
+    <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.040" length="0.020"/>
+      </geometry>
+        <material name="gold"/>
+    </visual>
+  </link>
+
+  <joint name="rear_left_wheel_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="wheel_rear_left"/>
+    <origin xyz="-0.0575 0.070 0.04" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.1416" upper="3.1416" effort="1" velocity="10"/>
+  </joint>
+
+
+  <!-- Sensor Suite -->
+  <!-- 1. LIDAR -->
+  <link name="lidar_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.04 0.078 0.030"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <visual>
+      <origin xyz="0.02 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.001 0.060 0.018"/>
+      </geometry>
+      <material name="trans_blue"/>
+    </visual>
+  </link>
+
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="0.065 0 0.045" rpy="0 0 0"/>
+  </joint>
+</robot>
