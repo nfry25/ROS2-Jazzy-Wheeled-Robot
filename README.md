@@ -4,15 +4,15 @@ URDF model of a four-wheeled mobile robot with a rigid body rectangular chassis 
 
 ## Preview
 
-![Wheeled robot visualized with mounted LiDAR sensor in Rviz2](docs/imgs/rvizRobot.png)
+![Wheeled robot visualized with mounted LiDAR sensor in Rviz2](jazzy_robot/docs/imgs/rvizRobot.png)
 
 ## Requirements
 
-- [Ubuntu 24.04 LTS]([text](https://documentation.ubuntu.com/release-notes/24.04/))
-- [ROS 2 Jazzy — Ubuntu Installation]([text](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html))
+- [Ubuntu 24.04 LTS](https://documentation.ubuntu.com/release-notes/24.04/)
+- [ROS 2 Jazzy — Ubuntu Installation](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html)
 - Graphical URDF Viewer (RViz2)
 
-My development environment utilized Windows 11 Visual Studio Code and Ubuntu 24.04 through [WSL2]([text](https://learn.microsoft.com/en-us/windows/wsl/install))
+My development environment utilized Windows 11 Visual Studio Code and Ubuntu 24.04 through [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install)
 
 ## Installation 
 
@@ -138,9 +138,9 @@ jazzy_robot/
 
 
 ## References
-- [ROS 2 Jazzy Documentation]()
-- [ROS 2 URDF tutorials]()
-- [Automatic Addison: Tutorials]()
+- [ROS 2 Jazzy Documentation](https://docs.ros.org/en/jazzy/index.html)
+- [ROS 2 URDF tutorials](https://docs.ros.org/en/jazzy/Tutorials/Intermediate/URDF/Building-a-Visual-Robot-Model-with-URDF-from-Scratch.html)
+- [Automatic Addison: Tutorials](https://automaticaddison.com/tutorials/)
 
 ## License
 
